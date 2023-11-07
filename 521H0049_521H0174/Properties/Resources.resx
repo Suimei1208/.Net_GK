@@ -193,8 +193,14 @@
   <data name="GearIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GearIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon database untoggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon database untoggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon child list untoggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon child list untoggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon loading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon home untoggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon home untoggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +214,7 @@
   <data name="icon print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon database untoggle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon database untoggle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading gif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading gif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

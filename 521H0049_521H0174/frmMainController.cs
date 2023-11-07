@@ -13,41 +13,29 @@ namespace _521H0049_521H0174
         private bool isUserContainerExpand = false;         //child flow pannel
         private bool isStudentContainerExpand = false;      // -
         private bool isDataContainerExpand = false;         // -
-        private bool isLogged = false;
+        private bool Logged = false;
 
 
 
         //main
-        public frmMainController(bool isLogged)
+        public frmMainController()
         {
             InitializeComponent();
-            startWhenFormOn(isLogged);
+            startWhenFormOn();
         }
 
 
         //these functions/tasks will run when the form is started
-        private void startWhenFormOn(bool isLogged)
+        private void startWhenFormOn()
         {
-            if (isLogged) // change this to !isLogged when database is done
-            {
-                frmLogin login = new frmLogin();
-                login.ShowDialog();
-                if (login.DialogResult== DialogResult.OK) 
-                { 
-                    
-                }
-                else
-                {
-                    this.Close();
-                }
-            }
+            
         }
 
 
         //exit application
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
 
@@ -253,10 +241,67 @@ namespace _521H0049_521H0174
             }
         }
 
+        //Button user information
         private void btnUserInfo_Click(object sender, EventArgs e)
         {
+            clearUserControls();
             uC_userProfile uc = new uC_userProfile();
             uc.Dock= DockStyle.Fill;
+            Main.Controls.Add(uc);
+            //uc.Show();
+        }
+
+        //Button log out
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            this.Close();
+        }
+
+
+        //Clear user control in main container
+        private void clearUserControls()
+        {
+            if (Main.Controls.Count > 0) 
+            { 
+                Main.Controls.Clear();
+            }
+        }
+
+
+        //Buttons of Student Container
+        private void btnStudentList_Click(object sender, EventArgs e)
+        {
+            clearUserControls();
+        }
+        // -
+        private void btnStudentDetails_Click(object sender, EventArgs e)
+        {
+            clearUserControls();
+        }
+
+
+        //Buttons of User Container
+        private void btnUsersList_Click(object sender, EventArgs e)
+        {
+            clearUserControls();
+        }
+        // -
+        private void btnUserLoginHistory_Click(object sender, EventArgs e)
+        {
+            clearUserControls();
+        }
+
+
+        //Buttons of Data Container
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            clearUserControls();
+        }
+        // -
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            clearUserControls();
         }
     }
 }

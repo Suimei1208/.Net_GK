@@ -213,6 +213,16 @@ namespace _521H0049_521H0174.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_loading {
+            get {
+                object obj = ResourceManager.GetObject("icon loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_lock {
             get {
                 object obj = ResourceManager.GetObject("icon lock", resourceCulture);
@@ -276,6 +286,16 @@ namespace _521H0049_521H0174.Properties {
         internal static System.Drawing.Bitmap icon_user_untoggle {
             get {
                 object obj = ResourceManager.GetObject("icon user untoggle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading_gif {
+            get {
+                object obj = ResourceManager.GetObject("loading gif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

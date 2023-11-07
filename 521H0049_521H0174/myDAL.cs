@@ -24,11 +24,15 @@ namespace _521H0049_521H0174
         }
 
         // myDAL.UserExists will return true if exist valid parameters, else return false
-        public bool UserExists(string username, string password)
+        public async Task<bool> UserExists(string username, string password)
         {
             User user = dbcontext.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
-            bool abc = user != null ? true : false;   
-            return abc;
+            return user != null;
+        }
+
+        public void dispose()
+        {
+            dbcontext.Dispose();
         }
     }
 }

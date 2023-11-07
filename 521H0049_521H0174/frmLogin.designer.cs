@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.loadingIcon = new System.Windows.Forms.PictureBox();
             this.errlabel = new System.Windows.Forms.Label();
             this.btnForgetPass = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -43,15 +50,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
@@ -73,6 +75,71 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 550);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lPanel_MD);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lPanel_MM);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lPanel_MU);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(86, 499);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(186, 16);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Nguyen Xuan Trieu - 521H0174";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(72, 476);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(200, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Nguyen Duc Nhat Hao - 521H0049";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(153, 451);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 19);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Developed by";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
+            this.label4.Location = new System.Drawing.Point(136, 260);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 33);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "System";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(60, 222);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 33);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Management";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
+            this.label2.Location = new System.Drawing.Point(60, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 33);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Student";
             // 
             // pictureBox1
             // 
@@ -87,6 +154,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
+            this.panel2.Controls.Add(this.loadingIcon);
             this.panel2.Controls.Add(this.errlabel);
             this.panel2.Controls.Add(this.btnForgetPass);
             this.panel2.Controls.Add(this.btnLogin);
@@ -99,6 +167,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(500, 550);
             this.panel2.TabIndex = 1;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.rPanel_MD);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rPanel_MM);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.rPanel_MU);
+            // 
+            // loadingIcon
+            // 
+            this.loadingIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loadingIcon.Image = global::_521H0049_521H0174.Properties.Resources.loading_gif;
+            this.loadingIcon.Location = new System.Drawing.Point(184, 359);
+            this.loadingIcon.MaximumSize = new System.Drawing.Size(32, 32);
+            this.loadingIcon.MinimumSize = new System.Drawing.Size(32, 32);
+            this.loadingIcon.Name = "loadingIcon";
+            this.loadingIcon.Size = new System.Drawing.Size(32, 32);
+            this.loadingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loadingIcon.TabIndex = 10;
+            this.loadingIcon.TabStop = false;
+            this.loadingIcon.WaitOnLoad = true;
             // 
             // errlabel
             // 
@@ -254,68 +339,6 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
-            this.label2.Location = new System.Drawing.Point(60, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 33);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Student";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 222);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 33);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Management";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
-            this.label4.Location = new System.Drawing.Point(136, 260);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 33);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "System";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(153, 451);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 19);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Developed by";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(72, 476);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 16);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Nguyen Duc Nhat Hao - 521H0049";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(86, 499);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(186, 16);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Nguyen Xuan Trieu - 521H0174";
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -368,6 +392,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox loadingIcon;
     }
 }
 
