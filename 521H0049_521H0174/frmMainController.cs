@@ -1,12 +1,5 @@
-﻿using DevExpress.Utils.Extensions;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _521H0049_521H0174
@@ -263,7 +256,6 @@ namespace _521H0049_521H0174
         private void btnUserInfo_Click(object sender, EventArgs e)
         {
             uC_userProfile uc = new uC_userProfile();
-            Main.AddControl(uc);
             uc.Dock= DockStyle.Fill;
         }
     }

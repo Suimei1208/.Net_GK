@@ -16,7 +16,7 @@ namespace _521H0049_521H0174
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainController(false));
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _521H0049_521H0174.Models;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace _521H0049_521H0174
     public partial class frmLogin : Form
     {
         private bool isHide = true;
-
+        private myDAL myDAL = new myDAL();
 
         public frmLogin()
         {
@@ -40,26 +41,26 @@ namespace _521H0049_521H0174
 
         private void InputValidator()
         {
-            string usn = tbUsername.Text.Trim();
-            string psw = tbPassword.Text.Trim();
-            myDAL DAL = new myDAL();
+            
 
-            if (usn.Equals("") || psw.Equals(""))
+            if (tbUsername.Text.Equals("") || tbUsername.Text.Equals(""))
             {
                 errlabel.Text = "Username/Password is empty";
                 errlabel.Show();
             }
-            else if (!DAL.UserExists(usn, psw))
+            
+            else if(myDAL.UserExists(tbUsername.Text, tbPassword.Text))
             {
-                errlabel.Text = "Incorrect Username/Password";
-                errlabel.Show();
-            }
-            else
-            {
+                MessageBox.Show("Oke");
                 frmMainController f = new frmMainController(true);
                 this.DialogResult= DialogResult.OK;
                 f.Show();
                 this.Close();
+            }
+            else
+            {
+                errlabel.Text = "Incorrect Username/Password";
+                errlabel.Show();
             }
 
         }
@@ -68,7 +69,15 @@ namespace _521H0049_521H0174
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            /*if (myDAL.UserExists(tbUsername.Text, tbPassword.Text))
+            {
+                MessageBox.Show("Oke");
+                Form1 mainForm = new Form1();
+                mainForm.Show();
+                this.Close();
+            }*/
             InputValidator();
+
         }
 
         private void User_KeyDown(object sender, KeyEventArgs e)
