@@ -3,8 +3,6 @@ using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.XtraEditors.ButtonPanel;
 using System.Threading;
 
 namespace _521H0049_521H0174
@@ -16,8 +14,6 @@ namespace _521H0049_521H0174
         private Point offset;                               // -
         private bool isHide = true;                         //Reveal/Hide password
         
-
-
 
         public frmLogin()
         {
@@ -61,7 +57,6 @@ namespace _521H0049_521H0174
 
         }
 
-
         //This function make sure if user is existed in database or not
         private async void InputValidator()
         {
@@ -81,6 +76,7 @@ namespace _521H0049_521H0174
             else if(await myDAL.UserExists(tbUsername.Text, tbPassword.Text))
             {
                 //MessageBox.Show("Load icon run");
+                SharedData.Instance.username = tbUsername.Text;
                 loadingIcon.Hide();
                 myDAL.dispose();
                 this.DialogResult= DialogResult.OK;
@@ -96,21 +92,12 @@ namespace _521H0049_521H0174
             
         }
 
-
         //When click on login button
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*if (myDAL.UserExists(tbUsername.Text, tbPassword.Text))
-            {
-                MessageBox.Show("Oke");
-                Form1 mainForm = new Form1();
-                mainForm.Show();
-                this.Close();
-            }*/
             InputValidator();
 
         }
-
 
         //Increase user experience by detecting enter key press -> run login button function
         private void User_KeyDown(object sender, KeyEventArgs e)
@@ -124,9 +111,6 @@ namespace _521H0049_521H0174
             if (e.KeyCode == Keys.Enter)
                 InputValidator();
         }
-
-
-
 
         //Declare function to make a form draggable
         //when hold mouse

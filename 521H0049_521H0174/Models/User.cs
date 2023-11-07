@@ -29,5 +29,8 @@ namespace _521H0049_521H0174.Models
 
         [StringLength(20)]
         public string Status { get; set; }
+
+        [StringLength(50)]
+        public string Avatar { get; set; }
     }
 }

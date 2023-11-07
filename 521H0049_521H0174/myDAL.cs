@@ -34,5 +34,35 @@ namespace _521H0049_521H0174
         {
             dbcontext.Dispose();
         }
+
+        public void updateAvatar(string username, string avatar) {
+            User user = dbcontext.Users.FirstOrDefault(u => u.Username == username);
+
+            if (user != null)
+            {
+                user.Avatar = avatar;
+                dbcontext.SaveChanges();
+            }
+        }
+
+        public string GetAvatarPath(string username)
+        { 
+            User user = dbcontext.Users.FirstOrDefault(u => u.Username == username);
+            if (user != null)
+            {
+                return user.Avatar;
+            }
+            return null;
+        }
+
+        public string GetRole(string username)
+        {
+            User user = dbcontext.Users.FirstOrDefault(u => u.Username == username);
+            if (user != null)
+            {
+                return user.Role;
+            }
+            return null;
+        }
     }
 }

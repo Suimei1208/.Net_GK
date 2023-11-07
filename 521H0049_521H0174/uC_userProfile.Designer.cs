@@ -28,35 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.userImage = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.userInfoPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.rjCircularPictureBox2 = new _521H0049_521H0174.RJCircularPictureBox();
+            this.rjCircularPictureBox1 = new _521H0049_521H0174.RJCircularPictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.userImage);
-            this.panel1.Location = new System.Drawing.Point(405, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 200);
-            this.panel1.TabIndex = 0;
-            // 
-            // userImage
-            // 
-            this.userImage.BackgroundImage = global::_521H0049_521H0174.Properties.Resources.anhtucopap;
-            this.userImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userImage.Location = new System.Drawing.Point(0, 0);
-            this.userImage.Name = "userImage";
-            this.userImage.Size = new System.Drawing.Size(200, 200);
-            this.userImage.TabIndex = 1;
-            this.userImage.TabStop = false;
             // 
             // panel2
             // 
@@ -97,33 +80,74 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "ADMIN";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // rjCircularPictureBox2
+            // 
+            this.rjCircularPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox2.BorderColor = System.Drawing.Color.Black;
+            this.rjCircularPictureBox2.BorderColor2 = System.Drawing.Color.Black;
+            this.rjCircularPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox2.BorderSize = 2;
+            this.rjCircularPictureBox2.GradientAngle = 50F;
+            this.rjCircularPictureBox2.Image = global::_521H0049_521H0174.Properties.Resources.change;
+            this.rjCircularPictureBox2.Location = new System.Drawing.Point(581, 205);
+            this.rjCircularPictureBox2.Name = "rjCircularPictureBox2";
+            this.rjCircularPictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.rjCircularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox2.TabIndex = 5;
+            this.rjCircularPictureBox2.TabStop = false;
+            this.rjCircularPictureBox2.Click += new System.EventHandler(this.rjCircularPictureBox2_Click);
+            // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.Black;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 2;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = global::_521H0049_521H0174.Properties.Resources.anhtucopap;
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(403, 34);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(216, 216);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 4;
+            this.rjCircularPictureBox1.TabStop = false;
+            // 
             // uC_userProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(184)))), ((int)(((byte)(151)))));
+            this.Controls.Add(this.rjCircularPictureBox2);
+            this.Controls.Add(this.rjCircularPictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.userInfoPanel);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "uC_userProfile";
             this.Size = new System.Drawing.Size(1010, 670);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userImage)).EndInit();
+            this.Load += new System.EventHandler(this.uC_userProfile_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox userImage;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel userInfoPanel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private RJCircularPictureBox rjCircularPictureBox1;
+        private RJCircularPictureBox rjCircularPictureBox2;
     }
 }
