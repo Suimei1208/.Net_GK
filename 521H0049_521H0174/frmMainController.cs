@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+//using System.Windows.Input;
 
 namespace _521H0049_521H0174
 {
@@ -56,6 +57,7 @@ namespace _521H0049_521H0174
             }
         }
         // -
+        
         private void topPanel_MM(object sender, MouseEventArgs e)
         {
             if (isDragging)
@@ -254,8 +256,13 @@ namespace _521H0049_521H0174
         //Button log out
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            this.Hide();
+            Form f = Application.OpenForms[0];
+            f.ShowDialog();
             this.Close();
+
+            //Application.Restart();
+            //this.Close();
         }
 
 

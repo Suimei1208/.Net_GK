@@ -18,17 +18,9 @@ namespace _521H0049_521H0174
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            frmLogin login = new frmLogin();
-            if (login.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new frmMainController());
-            }
-            else
-            {
-                Application.Exit();
-            }
-
             
+            Application.Run(new frmLogin());
+             
         }
     }
 }

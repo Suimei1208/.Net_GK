@@ -73,18 +73,29 @@ namespace _521H0049_521H0174
                 errlabel.Show();
             }
             
-            else if(await myDAL.UserExists(tbUsername.Text, tbPassword.Text))
+            else if(true) //await myDAL.UserExists(tbUsername.Text, tbPassword.Text)
             {
                 //MessageBox.Show("Load icon run");
-                SharedData.Instance.username = tbUsername.Text;
+                //SharedData.Instance.username = tbUsername.Text;
                 loadingIcon.Hide();
-                myDAL.dispose();
-                this.DialogResult= DialogResult.OK;
+                //myDAL.dispose();
+                this.Hide();
+                Form f;
+                if (Application.OpenForms.Count<2)
+                {
+                    f = new frmMainController();
+                    
+                }
+                else
+                {
+                    f = Application.OpenForms[0];
+                }
+                f.ShowDialog();
                 this.Close();
             }
             else
             {
-                //MessageBox.Show("Load icon run");
+                MessageBox.Show("Load icon run");
                 loadingIcon.Hide();
                 errlabel.Text = "Incorrect Username/Password";
                 errlabel.Show();
