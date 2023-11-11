@@ -90,14 +90,18 @@ namespace _521H0049_521H0174
                     Directory.CreateDirectory(destinationPath);
                     MessageBox.Show(username);
 
-                     /*
-                    try
-                    {*/
-                        string existingAvatarPath = Path.Combine("../../Avatar/", myDAL.GetAvatarPath(username));
-                        if (!string.IsNullOrEmpty(existingAvatarPath))
+                    /*
+                   try
+                   {*/
+                        if (myDAL.GetAvatarPath(username) != null)
                         {
-                            File.Delete(existingAvatarPath);
+                            string existingAvatarPath = Path.Combine("../../Avatar/", myDAL.GetAvatarPath(username));
+                            if (!string.IsNullOrEmpty(existingAvatarPath))
+                            {
+                                File.Delete(existingAvatarPath);
+                            }
                         }
+                        
 
                         string destinationFileName = Path.GetFileName(openFileDialog.FileName);
                         MessageBox.Show(destinationFileName);
