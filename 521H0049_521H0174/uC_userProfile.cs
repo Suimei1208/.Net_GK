@@ -88,8 +88,10 @@ namespace _521H0049_521H0174
                     string destinationPath = Path.Combine(Application.StartupPath, relativeFolderPath);
 
                     Directory.CreateDirectory(destinationPath);
+                    MessageBox.Show(username);
 
-                    /*try
+                     /*
+                    try
                     {*/
                         string existingAvatarPath = Path.Combine("../../Avatar/", myDAL.GetAvatarPath(username));
                         if (!string.IsNullOrEmpty(existingAvatarPath))

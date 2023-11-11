@@ -35,13 +35,13 @@ namespace _521H0049_521H0174
             dbcontext.Dispose();
         }
 
-        public void updateAvatar(string username, string avatar) {
+        public async void updateAvatar(string username, string avatar) {
             User user = dbcontext.Users.FirstOrDefault(u => u.Username == username);
 
             if (user != null)
             {
                 user.Avatar = avatar;
-                dbcontext.SaveChanges();
+                await dbcontext.SaveChangesAsync();
             }
         }
 
