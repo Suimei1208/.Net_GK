@@ -16,13 +16,22 @@ namespace _521H0049_521H0174
     {
         private myDAL myDAL;
         private string selectedImagePath;
+        private int flowWidth;
         public uC_userProfile()
         {
             InitializeComponent();
+            
+            startWhenFormOn();
+        }
+
+
+        //these functions/tasks will run when the form is started
+        private void startWhenFormOn()
+        {
             myDAL = new myDAL();
             string username = SharedData.Instance.username;
             string fileName;
-            if(myDAL.GetAvatarPath(username) == null)
+            if (myDAL.GetAvatarPath(username) == null)
             {
                 fileName = "normal.png";
             }
@@ -31,20 +40,32 @@ namespace _521H0049_521H0174
                 fileName = myDAL.GetAvatarPath(username);
             }
             rjCircularPictureBox1.ImageLocation = Path.Combine("../../Avatar/", fileName);
+
+            flowWidth = this.Width;
+
             label1.Text = username;
+
+            int x = (flowWidth - label1.Width) / 2;
+            int y = 260;
+            label1.Location = new System.Drawing.Point(x, y);
+
             label2.Text = myDAL.GetRole(username);
-            //startWhenFormOn();
+            x = (flowWidth - label2.Width) / 2;
+            y = 295;
+            label2.Location = new System.Drawing.Point(x, y);
+
+
+            x = (flowWidth - rjCircularPictureBox1.Width) / 2;
+            y = 25;
+            rjCircularPictureBox1.Location = new System.Drawing.Point(x, y);
+
+
+            x = (flowWidth - rjCircularPictureBox2.Width + 150) / 2;
+            y = 195;
+            rjCircularPictureBox2.Location = new System.Drawing.Point(x, y);
         }
 
-
-        //these functions/tasks will run when the form is started
-        /*private void startWhenFormOn()
-        {
-            roundImg(userImage, userImage.Width, userImage.Height);
-            roundPanel(userInfoPanel, 2, 2);
-        }
-
-
+        /*
         //function below make square img -> round img
         private void roundImg(PictureBox px, int pxWidth, int pxHeight)
         {
@@ -64,14 +85,9 @@ namespace _521H0049_521H0174
             p.Region = r;
         }*/
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void uC_userProfile_Load(object sender, EventArgs e)
         {
-
+            //startWhenFormOn();
         }
         
         private void rjCircularPictureBox2_Click(object sender, EventArgs e)
@@ -118,6 +134,11 @@ namespace _521H0049_521H0174
                     }*/
                 }
             }
+        }
+
+        private void formSizeChanged(object sender, EventArgs e)
+        {
+            //startWhenFormOn();
         }
     }
 }
