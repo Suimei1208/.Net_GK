@@ -157,6 +157,12 @@
     <Compile Include="frmAdjustStudent.Designer.cs">
       <DependentUpon>frmAdjustStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePass.Designer.cs">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     <Compile Include="frmAdjustUser.Designer.cs">
       <DependentUpon>frmAdjustUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUserDataAdjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserDataAdjustment.Designer.cs">
+      <DependentUpon>frmUserDataAdjustment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Import.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,17 +194,9 @@
       <DependentUpon>Import.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportAndExport.cs" />
-    <Compile Include="Migrations\202312161121428_YourInitialMigrationName.cs" />
-    <Compile Include="Migrations\202312161121428_YourInitialMigrationName.designer.cs">
-      <DependentUpon>202312161121428_YourInitialMigrationName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161615245_YourMigrationName6.cs" />
-    <Compile Include="Migrations\202312161615245_YourMigrationName6.designer.cs">
-      <DependentUpon>202312161615245_YourMigrationName6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312161656566_YourMigrationName8.cs" />
-    <Compile Include="Migrations\202312161656566_YourMigrationName8.designer.cs">
-      <DependentUpon>202312161656566_YourMigrationName8.cs</DependentUpon>
+    <Compile Include="Migrations\202312161914383_TenMigration.cs" />
+    <Compile Include="Migrations\202312161914383_TenMigration.designer.cs">
+      <DependentUpon>202312161914383_TenMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Certificate.cs" />
@@ -256,6 +260,9 @@
     <EmbeddedResource Include="frmAdjustStudent.resx">
       <DependentUpon>frmAdjustStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePass.resx">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,17 +272,14 @@
     <EmbeddedResource Include="frmAdjustUser.resx">
       <DependentUpon>frmAdjustUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUserDataAdjustment.resx">
+      <DependentUpon>frmUserDataAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Import.resx">
       <DependentUpon>Import.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161121428_YourInitialMigrationName.resx">
-      <DependentUpon>202312161121428_YourInitialMigrationName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161615245_YourMigrationName6.resx">
-      <DependentUpon>202312161615245_YourMigrationName6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312161656566_YourMigrationName8.resx">
-      <DependentUpon>202312161656566_YourMigrationName8.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312161914383_TenMigration.resx">
+      <DependentUpon>202312161914383_TenMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

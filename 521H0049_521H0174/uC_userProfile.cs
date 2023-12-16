@@ -1,48 +1,63 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace _521H0049_521H0174
 {
     public partial class uC_userProfile : UserControl
     {
-        private myDAL myDAL;
-        
+        private readonly myDAL myDal = new myDAL();
+        public static uC_userProfile instance;
+        public static string _instanceUsername;
+        public static int _instanceAge;
+        public static string _instanceFullname;
+        public static string _instancePhone;
+
         private int flowWidth;
         public uC_userProfile()
         {
             InitializeComponent();
-            
+            instance= this;
             startWhenFormOn();
+        }
+
+        private void updateData()
+        {
+            var user = myDal.FindUserById(SharedData.Instance.Id);
+            label1.Text = user.FullName.ToString();
+            labelUsername.Text = user.Username.ToString();
+            LabelAge.Text = user.Age.ToString();
+            LabelStatus.Text = user.Status.ToString();
+            LabelPhone.Text = user.PhoneNumber.ToString();
         }
 
 
         //these functions/tasks will run when the form is started
         private void startWhenFormOn()
         {
-            myDAL = new myDAL();
             string username = SharedData.Instance.Username;
             string fileName;
-            if (myDAL.GetAvatarPath(username) == null)
+            if (myDal.GetAvatarPath(username) == null)
             {
                 fileName = "normal.png";
             }
             else
             {
-                fileName = myDAL.GetAvatarPath(username);
+                fileName = myDal.GetAvatarPath(username);
             }
             rjCircularPictureBox1.ImageLocation = Path.Combine("../../Avatar/", fileName);
 
             flowWidth = this.Width;
 
-            label1.Text = username;
+            updateData();
 
             int x = (flowWidth - label1.Width) / 2;
             int y = 260;
             label1.Location = new System.Drawing.Point(x, y);
 
-            label2.Text = myDAL.GetRole(username);
+            label2.Text = myDal.GetRole(username);
             x = (flowWidth - label2.Width) / 2;
             y = 295;
             label2.Location = new System.Drawing.Point(x, y);
@@ -102,9 +117,9 @@ namespace _521H0049_521H0174
                     /*
                    try
                    {*/
-                        if (myDAL.GetAvatarPath(username) != null)
+                        if (myDal.GetAvatarPath(username) != null)
                         {
-                            string existingAvatarPath = Path.Combine("../../Avatar/", myDAL.GetAvatarPath(username));
+                            string existingAvatarPath = Path.Combine("../../Avatar/", myDal.GetAvatarPath(username));
                             if (!string.IsNullOrEmpty(existingAvatarPath))
                             {
                                 File.Delete(existingAvatarPath);
@@ -117,7 +132,7 @@ namespace _521H0049_521H0174
                         string destinationFilePath = Path.Combine(destinationPath, Path.GetFileName(openFileDialog.FileName));
                         File.Copy(openFileDialog.FileName, destinationFilePath);
 
-                        myDAL.updateAvatar(username, destinationFileName);
+                        myDal.updateAvatar(username, destinationFileName);
                         MessageBox.Show("Lưu ảnh thành công!");
                         rjCircularPictureBox1.ImageLocation = openFileDialog.FileName;
                     /*}
@@ -132,6 +147,32 @@ namespace _521H0049_521H0174
         private void formSizeChanged(object sender, EventArgs e)
         {
             //startWhenFormOn();
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            frmUserDataAdjustment f = new frmUserDataAdjustment();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                label1.Text = _instanceFullname;
+                labelUsername.Text = _instanceUsername;
+                LabelAge.Text = _instanceAge.ToString();
+                LabelPhone.Text = _instancePhone;
+            }
+            
+        }
+
+        private void btn_adjust_Click(object sender, EventArgs e)
+        {
+            frmChangePass f = new frmChangePass();
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                label1.Text = _instanceFullname;
+                labelUsername.Text = _instanceUsername;
+                LabelAge.Text = _instanceAge.ToString();
+                LabelPhone.Text = _instancePhone;
+            }
+            
         }
     }
 }

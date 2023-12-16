@@ -104,6 +104,34 @@ namespace _521H0049_521H0174
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
+        public bool ChangePassword(int userId, string oldPassword, string newPassword, string newPasswordConfirmation)
+        {
+            
+                var user = dbContext.Users.Find(userId);
+
+                if (user == null)
+                {
+                    return false; 
+                }
+
+                if (!VerifyPassword(oldPassword, user.Password))
+                {
+                    return false; 
+                }
+
+                if (newPassword != newPasswordConfirmation)
+                {
+                    return false; 
+                }
+
+                user.Password = HashPassword(newPassword);
+
+                dbContext.SaveChangesAsync();
+
+                return true;
+            
+        }
+
         public List<object> GetAllUsers()
         {
             return dbContext.Users.Select(u => new
@@ -185,6 +213,11 @@ namespace _521H0049_521H0174
                 .ToList()
                 .Cast<object>()
                 .ToList();
+        }
+
+        public User FindUserById(int userId)
+        {
+            return dbContext.Users.Find(userId);
         }
 
 

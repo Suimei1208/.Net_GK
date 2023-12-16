@@ -309,7 +309,7 @@
             this.studentMenuFlowContainer.MaximumSize = new System.Drawing.Size(195, 180);
             this.studentMenuFlowContainer.MinimumSize = new System.Drawing.Size(80, 80);
             this.studentMenuFlowContainer.Name = "studentMenuFlowContainer";
-            this.studentMenuFlowContainer.Size = new System.Drawing.Size(195, 180);
+            this.studentMenuFlowContainer.Size = new System.Drawing.Size(195, 80);
             this.studentMenuFlowContainer.TabIndex = 5;
             // 
             // panel2
@@ -404,7 +404,7 @@
             this.dataControlMenuFlowContainer.Controls.Add(this.panel4);
             this.dataControlMenuFlowContainer.Controls.Add(this.panel10);
             this.dataControlMenuFlowContainer.Controls.Add(this.panel11);
-            this.dataControlMenuFlowContainer.Location = new System.Drawing.Point(3, 355);
+            this.dataControlMenuFlowContainer.Location = new System.Drawing.Point(3, 255);
             this.dataControlMenuFlowContainer.MaximumSize = new System.Drawing.Size(195, 180);
             this.dataControlMenuFlowContainer.MinimumSize = new System.Drawing.Size(80, 80);
             this.dataControlMenuFlowContainer.Name = "dataControlMenuFlowContainer";
@@ -502,7 +502,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.btnLogOut);
-            this.panel5.Location = new System.Drawing.Point(3, 441);
+            this.panel5.Location = new System.Drawing.Point(3, 341);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(195, 80);
             this.panel5.TabIndex = 4;
