@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -43,6 +46,12 @@
     <Reference Include="DevExpress.Sparkline.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevOne.Security.Cryptography.BCrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.1.0.0.0\lib\DevOne.Security.Cryptography.BCrypt.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -71,6 +80,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStudent.Designer.cs">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdjustStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdjustStudent.Designer.cs">
+      <DependentUpon>frmAdjustStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +109,12 @@
     </Compile>
     <Compile Include="frmMainController.designer.cs">
       <DependentUpon>frmMainController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdjustUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdjustUser.Designer.cs">
+      <DependentUpon>frmAdjustUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\LoginHistory.cs" />
@@ -95,18 +128,49 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SharedData.cs" />
+    <Compile Include="uC_studentManageList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uC_studentManageList.Designer.cs">
+      <DependentUpon>uC_studentManageList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uC_userLoginHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uC_userLoginHistory.Designer.cs">
+      <DependentUpon>uC_userLoginHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uC_userManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uC_userManagement.Designer.cs">
+      <DependentUpon>uC_userManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="uC_userProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="uC_userProfile.Designer.cs">
       <DependentUpon>uC_userProfile.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAddStudent.resx">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdjustStudent.resx">
+      <DependentUpon>frmAdjustStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainController.resx">
       <DependentUpon>frmMainController.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdjustUser.resx">
+      <DependentUpon>frmAdjustUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,6 +181,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="uC_studentManageList.resx">
+      <DependentUpon>uC_studentManageList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uC_userLoginHistory.resx">
+      <DependentUpon>uC_userLoginHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uC_userManagement.resx">
+      <DependentUpon>uC_userManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uC_userProfile.resx">
       <DependentUpon>uC_userProfile.cs</DependentUpon>
     </EmbeddedResource>

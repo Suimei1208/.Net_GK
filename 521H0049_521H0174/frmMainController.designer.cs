@@ -308,7 +308,7 @@
             this.studentMenuFlowContainer.MaximumSize = new System.Drawing.Size(195, 180);
             this.studentMenuFlowContainer.MinimumSize = new System.Drawing.Size(80, 80);
             this.studentMenuFlowContainer.Name = "studentMenuFlowContainer";
-            this.studentMenuFlowContainer.Size = new System.Drawing.Size(195, 80);
+            this.studentMenuFlowContainer.Size = new System.Drawing.Size(195, 180);
             this.studentMenuFlowContainer.TabIndex = 5;
             // 
             // panel2
@@ -386,14 +386,14 @@
             this.btnStudentDetails.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
             this.btnStudentDetails.FlatAppearance.BorderSize = 2;
             this.btnStudentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudentDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentDetails.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudentDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(135)))), ((int)(((byte)(105)))));
             this.btnStudentDetails.Image = global::_521H0049_521H0174.Properties.Resources.icon_child_detail_untoggle;
             this.btnStudentDetails.Location = new System.Drawing.Point(0, 0);
             this.btnStudentDetails.Name = "btnStudentDetails";
             this.btnStudentDetails.Size = new System.Drawing.Size(195, 40);
             this.btnStudentDetails.TabIndex = 1;
-            this.btnStudentDetails.Text = "Details   ";
+            this.btnStudentDetails.Text = "Certificates";
             this.btnStudentDetails.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStudentDetails.UseVisualStyleBackColor = false;
             this.btnStudentDetails.Click += new System.EventHandler(this.btnStudentDetails_Click);
@@ -403,7 +403,7 @@
             this.dataControlMenuFlowContainer.Controls.Add(this.panel4);
             this.dataControlMenuFlowContainer.Controls.Add(this.panel10);
             this.dataControlMenuFlowContainer.Controls.Add(this.panel11);
-            this.dataControlMenuFlowContainer.Location = new System.Drawing.Point(3, 255);
+            this.dataControlMenuFlowContainer.Location = new System.Drawing.Point(3, 355);
             this.dataControlMenuFlowContainer.MaximumSize = new System.Drawing.Size(195, 180);
             this.dataControlMenuFlowContainer.MinimumSize = new System.Drawing.Size(80, 80);
             this.dataControlMenuFlowContainer.Name = "dataControlMenuFlowContainer";
@@ -500,7 +500,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.btnLogOut);
-            this.panel5.Location = new System.Drawing.Point(3, 341);
+            this.panel5.Location = new System.Drawing.Point(3, 441);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(195, 80);
             this.panel5.TabIndex = 4;

@@ -14,8 +14,7 @@ namespace _521H0049_521H0174
         private bool isUserContainerExpand = false;         //child flow pannel
         private bool isStudentContainerExpand = false;      // -
         private bool isDataContainerExpand = false;         // -
-        private bool Logged = false;
-
+        private readonly myDAL myDal = new myDAL();
 
 
         //main
@@ -29,7 +28,17 @@ namespace _521H0049_521H0174
         //these functions/tasks will run when the form is started
         private void startWhenFormOn()
         {
-            
+            dataControlMenuFlowContainer.Visible= false;
+            userMenuFlowContainer.Visible = false;
+
+            if (SharedData.Instance.Role.Equals("Admin"))
+            {
+                userMenuFlowContainer.Visible= true;
+            }
+            if (SharedData.Instance.Role.Equals("Admin")|| SharedData.Instance.Role.Equals("Manager"))
+            {
+                dataControlMenuFlowContainer.Visible = true;
+            }
         }
 
 
@@ -256,6 +265,7 @@ namespace _521H0049_521H0174
         //Button log out
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            SharedData.Instance.ClearUser();
             this.Hide();
             Form f = Application.OpenForms[0];
             f.ShowDialog();
@@ -280,6 +290,9 @@ namespace _521H0049_521H0174
         private void btnStudentList_Click(object sender, EventArgs e)
         {
             clearUserControls();
+            uC_studentManageList uc = new uC_studentManageList();
+            uc.Dock = DockStyle.Fill;
+            Main.Controls.Add(uc);
         }
         // -
         private void btnStudentDetails_Click(object sender, EventArgs e)
@@ -292,11 +305,17 @@ namespace _521H0049_521H0174
         private void btnUsersList_Click(object sender, EventArgs e)
         {
             clearUserControls();
+            uC_userManagement uc = new uC_userManagement();
+            uc.Dock = DockStyle.Fill;
+            Main.Controls.Add(uc);
         }
         // -
         private void btnUserLoginHistory_Click(object sender, EventArgs e)
         {
             clearUserControls();
+            uC_userLoginHistory uc = new uC_userLoginHistory();
+            uc.Dock = DockStyle.Fill;
+            Main.Controls.Add(uc);
         }
 
 

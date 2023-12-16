@@ -13,7 +13,8 @@ namespace _521H0049_521H0174
         private bool isDragging = false;                    //draggable control bar 
         private Point offset;                               // -
         private bool isHide = true;                         //Reveal/Hide password
-        
+        private readonly myDAL myDal = new myDAL();
+
 
         public frmLogin()
         {
@@ -63,7 +64,7 @@ namespace _521H0049_521H0174
             loadingIcon.Show();
             loadingIcon.Refresh();
 
-            myDAL myDAL = new myDAL();
+            
 
             if (tbUsername.Text.Equals("") || tbUsername.Text.Equals(""))
             {
@@ -73,25 +74,32 @@ namespace _521H0049_521H0174
                 errlabel.Show();
             }
             
-            else if(await myDAL.UserExists(tbUsername.Text, tbPassword.Text))
+            else if(await myDal.UserExists(tbUsername.Text, tbPassword.Text))
             {
-                //MessageBox.Show("Load icon run");
-                SharedData.Instance.username = tbUsername.Text;
-                loadingIcon.Hide();
-                myDAL.dispose();
-                this.Hide();
-                Form f;
-                if (Application.OpenForms.Count<2)
+                if (myDal.GetUserStatusByUsername(tbUsername.Text).Equals("Normal"))
                 {
-                    f = new frmMainController();
-                    
+                    //MessageBox.Show("Load icon run");
+                    loadingIcon.Hide();
+                    myDal.LogUserLogin(tbUsername.Text);
+                    this.Hide();
+                    Form f;
+                    if (Application.OpenForms.Count < 2)
+                    {
+                        f = new frmMainController();
+                    }
+                    else
+                    {
+                        f = Application.OpenForms[0];
+                    }
+                    f.ShowDialog();
+                    Close();
                 }
                 else
                 {
-                    f = Application.OpenForms[0];
+                    loadingIcon.Hide();
+                    errlabel.Text = "This user has been blocked";
+                    errlabel.Show();
                 }
-                f.ShowDialog();
-                this.Close();
             }
             else
             {

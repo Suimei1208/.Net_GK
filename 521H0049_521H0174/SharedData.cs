@@ -8,25 +8,41 @@ namespace _521H0049_521H0174
 {
     public class SharedData
     {
-        private static SharedData instance;
+        private static SharedData _instance;
 
-        public string username { get; set; }
+        public static SharedData Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new SharedData();
+                }
+                return _instance;
+            }
+        }
+
+        public string Username { get; private set; }
+        public string Role { get; private set; }
+        public int Id { get; private set; }
 
         private SharedData()
         {
 
         }
 
-        public static SharedData Instance
+        public void SetUser(int id, string username, string role)
         {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new SharedData();
-                }
-                return instance;
-            }
+            Id = id;
+            Username = username;
+            Role = role;
+        }
+
+        public void ClearUser()
+        {
+            Id = 0;
+            Username = null;
+            Role = null;
         }
     }
 }

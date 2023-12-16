@@ -8,11 +8,17 @@ namespace _521H0049_521H0174.Models
 
     public partial class User
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserID { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Username { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string FullName { get; set; }
 
         [Required]
         [StringLength(100)]

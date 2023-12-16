@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Windows.Forms;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace _521H0049_521H0174
 {
     public partial class uC_userProfile : UserControl
     {
         private myDAL myDAL;
-        private string selectedImagePath;
+        
         private int flowWidth;
         public uC_userProfile()
         {
@@ -29,7 +22,7 @@ namespace _521H0049_521H0174
         private void startWhenFormOn()
         {
             myDAL = new myDAL();
-            string username = SharedData.Instance.username;
+            string username = SharedData.Instance.Username;
             string fileName;
             if (myDAL.GetAvatarPath(username) == null)
             {
@@ -99,7 +92,7 @@ namespace _521H0049_521H0174
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string username = SharedData.Instance.username;
+                    string username = SharedData.Instance.Username;
                     string relativeFolderPath = "../../Avatar/";
                     string destinationPath = Path.Combine(Application.StartupPath, relativeFolderPath);
 

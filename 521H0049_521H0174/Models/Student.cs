@@ -8,6 +8,8 @@ namespace _521H0049_521H0174.Models
 
     public partial class Student
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentID { get; set; }
 
         [Required]
@@ -20,7 +22,14 @@ namespace _521H0049_521H0174.Models
 
         public int? Age { get; set; }
 
+        public string Gender { get; set; }
+
+        public double GPA { get; set; }
+
+        public string Status { get; set; }
+
         [StringLength(20)]
         public string PhoneNumber { get; set; }
+
     }
 }
