@@ -300,6 +300,9 @@ namespace _521H0049_521H0174
         private void btnStudentDetails_Click(object sender, EventArgs e)
         {
             clearUserControls();
+            uC_CertificateList uc = new uC_CertificateList();
+            uc.Dock = DockStyle.Fill;
+            Main.Controls.Add(uc);
         }
 
 

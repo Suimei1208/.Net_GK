@@ -15,12 +15,7 @@ namespace _521H0049_521H0174.Models
         [Required]
         [StringLength(100)]
         public string CertificateName { get; set; }
-
-        [ForeignKey("Student")]
-        public int StudentID { get; set; }
-
-        public virtual Student Student { get; set; }
-
-        public DateTime IssuanceDate { get; set; }
+     
     }
 }
+

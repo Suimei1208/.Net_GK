@@ -16,9 +16,11 @@ namespace _521H0049_521H0174.Models
         public virtual DbSet<LoginHistory> LoginHistories { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<CertificateStudentList> CertificateStudentList { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
         }
     }
 }
