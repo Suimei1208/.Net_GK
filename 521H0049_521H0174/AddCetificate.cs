@@ -63,8 +63,7 @@ namespace _521H0049_521H0174
                 var CertificateForStudent = new CertificateStudentList()
                 {
                     StudentID = int.Parse(tbLStID.Text),
-                    CertificateID = selectedCertificate.CertificateID,
-                    IssuanceDate = dateTimePicker1.Value
+                    CertificateID = selectedCertificate.CertificateID
                 };
 
                 dbContext.CertificateStudentList.Add(CertificateForStudent);

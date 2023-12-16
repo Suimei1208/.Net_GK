@@ -11,6 +11,8 @@ using System.Globalization;
 using _521H0049_521H0174.Models;
 using System.Data.Entity;
 using CsvHelper.Configuration;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace _521H0049_521H0174
 {
@@ -21,7 +23,7 @@ namespace _521H0049_521H0174
         {
             dbContext = new Model1();
         }
-        public static List<Student> ReadCsvFile(string filePath)
+        public static List<Student> ReadCsvFileStdents(string filePath)
         {
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
@@ -36,7 +38,23 @@ namespace _521H0049_521H0174
             }
         }
 
-        public static void ExportToExcel(List<Student> students, string filePath)
+        public static List<CertificateStudentList> ReadCsvFile(string filePath)
+        {
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HeaderValidated = null,
+                MissingFieldFound = null,
+            };
+
+            using (var reader = new StreamReader(filePath)) 
+            using (var csv = new CsvReader(reader, config))
+            {               
+                csv.Context.RegisterClassMap<CertificateStudentListMap>();
+                return csv.GetRecords<CertificateStudentList>().ToList();
+            }
+        }
+
+        public static void ExportToExcelStudent(List<Student> students, string filePath)
         {
             ExcelPackage package = null;
             try
@@ -75,7 +93,35 @@ namespace _521H0049_521H0174
             }
         }
 
-        public static void ExportToCsv(List<Student> students, string filePath)
+        public static void ExportToExcelCertificate(List<CertificateStudentList> students, string filePath)
+        {
+            ExcelPackage package = null;
+            try
+            {
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                package = new ExcelPackage();
+                var worksheet = package.Workbook.Worksheets.Add("CertificateStudentList");
+                
+                worksheet.Cells["A1"].Value = "StudentID";
+                worksheet.Cells["B1"].Value = "CertificateID";
+
+                for (int i = 0; i < students.Count; i++)
+                {
+                    worksheet.Cells[i + 2, 1].Value = students[i].StudentID;
+                    worksheet.Cells[i + 2, 2].Value = students[i].CertificateID;
+                }
+                package.SaveAs(new FileInfo(filePath));
+            }
+            finally
+            {
+                if (package != null)
+                {
+                    package.Dispose();
+                }
+            }
+        }
+
+        public static void ExportToCsvStudent(List<Student> students, string filePath)
         {
             StreamWriter writer = null;
             CsvWriter csv = null;
@@ -100,12 +146,37 @@ namespace _521H0049_521H0174
             }
         }
 
-        public void ImportFile()
+        public static void ExportToCertificate(List<CertificateStudentList> students, string filePath)
+        {
+            StreamWriter writer = null;
+            CsvWriter csv = null;
+
+            try
+            {
+                writer = new StreamWriter(filePath);
+                csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
+                csv.WriteRecords(students);
+            }
+            finally
+            {
+                if (csv != null)
+                {
+                    csv.Dispose();
+                }
+
+                if (writer != null)
+                {
+                    writer.Dispose();
+                }
+            }
+        }
+
+        public void ImportFileStudents()
         {
             string filePath = GetFilePath();
             if (!string.IsNullOrEmpty(filePath))
             {
-                var students = ReadCsvFile(filePath);            
+                var students = ReadCsvFileStdents(filePath);            
                 dbContext.Students.AddRange(students);
                 dbContext.SaveChanges();
 
@@ -118,6 +189,28 @@ namespace _521H0049_521H0174
             }
         }
 
+        public void ImportFileCertifiicates()
+        {
+            string filePath = GetFilePath();
+            if (!string.IsNullOrEmpty(filePath))
+            {         
+                var Certificates = ReadCsvFile(filePath);
+
+                foreach (var certificate in Certificates)
+                {
+                   // MessageBox.Show(certificate.CertificateID.ToString());
+                    dbContext.CertificateStudentList.Add(certificate);
+                }
+
+                dbContext.SaveChanges();
+
+                MessageBox.Show("Import successful!");                       
+            }
+            else
+            {
+                MessageBox.Show("No file selected.");
+            }
+        }
         public List<Student> GetAllStudent()
         {
             var students = dbContext.Students.ToList(); 
@@ -135,19 +228,59 @@ namespace _521H0049_521H0174
 
             return studentDTOs;
         }
-        public void ExportFile()
+
+        public List<CertificateStudentList> GetCertificate()
+        {
+            var cERTIFICATE = dbContext.CertificateStudentList.ToList();
+
+            var cERTIFICATEDTOs = cERTIFICATE.Select(s => new CertificateStudentList
+            {
+                StudentID = s.StudentID,
+                CertificateID = s.CertificateID
+
+            }).ToList();
+
+            return cERTIFICATEDTOs;
+        }
+
+        public void ExportFileStudent()
         {
             var filePath = GetSaveFilePath();
             if (!string.IsNullOrEmpty(filePath))
             {
                 if (Path.GetExtension(filePath).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
                 {
-                    ExportToExcel(GetAllStudent(), filePath);
+                    ExportToExcelStudent(GetAllStudent(), filePath);
                     MessageBox.Show("Export successfully");
                 }
                 else if (Path.GetExtension(filePath).Equals(".csv", StringComparison.OrdinalIgnoreCase))
                 {
-                    ExportToCsv(dbContext.Students.ToList(), filePath);
+                    ExportToCsvStudent(dbContext.Students.ToList(), filePath);
+                    MessageBox.Show("Export successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Unsupported file format.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Export canceled.");
+            }
+        }
+        public void ExportFileCertificate()
+        {
+            var filePath = GetSaveFilePath();
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                if (Path.GetExtension(filePath).Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
+                {
+                    ExportToExcelCertificate(GetCertificate(), filePath);
+                    MessageBox.Show("Export successfully");
+                }
+                else if (Path.GetExtension(filePath).Equals(".csv", StringComparison.OrdinalIgnoreCase))
+                {
+                    ExportToCertificate(GetCertificate(), filePath);
                     MessageBox.Show("Export successfully");
                 }
                 else
@@ -191,5 +324,14 @@ namespace _521H0049_521H0174
             
         }
 
+    }
+    public sealed class CertificateStudentListMap : ClassMap<CertificateStudentList>
+    {
+        public CertificateStudentListMap()
+        {
+            Map(m => m.Id);
+            Map(m => m.StudentID);
+            Map(m => m.CertificateID);
+        }      
     }
 }

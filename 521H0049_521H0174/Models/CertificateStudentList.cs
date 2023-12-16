@@ -24,6 +24,5 @@ namespace _521H0049_521H0174.Models
 
         public virtual Certificate Certificate { get; set; }
 
-        public DateTime IssuanceDate { get; set; }
     }
 }

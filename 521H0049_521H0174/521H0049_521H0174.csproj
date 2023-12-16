@@ -127,6 +127,18 @@
     <Compile Include="AddCetificate.Designer.cs">
       <DependentUpon>AddCetificate.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdjustCerrtificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdjustCerrtificate.Designer.cs">
+      <DependentUpon>AdjustCerrtificate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Export.Designer.cs">
+      <DependentUpon>Export.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,10 +175,24 @@
     <Compile Include="frmAdjustUser.Designer.cs">
       <DependentUpon>frmAdjustUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Import.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Import.Designer.cs">
+      <DependentUpon>Import.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportAndExport.cs" />
     <Compile Include="Migrations\202312161121428_YourInitialMigrationName.cs" />
     <Compile Include="Migrations\202312161121428_YourInitialMigrationName.designer.cs">
       <DependentUpon>202312161121428_YourInitialMigrationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312161615245_YourMigrationName6.cs" />
+    <Compile Include="Migrations\202312161615245_YourMigrationName6.designer.cs">
+      <DependentUpon>202312161615245_YourMigrationName6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312161656566_YourMigrationName8.cs" />
+    <Compile Include="Migrations\202312161656566_YourMigrationName8.designer.cs">
+      <DependentUpon>202312161656566_YourMigrationName8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Certificate.cs" />
@@ -215,6 +241,12 @@
     <EmbeddedResource Include="AddCetificate.resx">
       <DependentUpon>AddCetificate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdjustCerrtificate.resx">
+      <DependentUpon>AdjustCerrtificate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export.resx">
+      <DependentUpon>Export.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudent.resx">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,8 +265,17 @@
     <EmbeddedResource Include="frmAdjustUser.resx">
       <DependentUpon>frmAdjustUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Import.resx">
+      <DependentUpon>Import.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312161121428_YourInitialMigrationName.resx">
       <DependentUpon>202312161121428_YourInitialMigrationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161615245_YourMigrationName6.resx">
+      <DependentUpon>202312161615245_YourMigrationName6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161656566_YourMigrationName8.resx">
+      <DependentUpon>202312161656566_YourMigrationName8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

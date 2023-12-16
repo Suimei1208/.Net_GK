@@ -1,13 +1,13 @@
 ﻿namespace _521H0049_521H0174
 {
-    partial class frmAdjustUser
+    partial class AdjustCerrtificate
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,49 +20,56 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbx_certificate = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_fullname = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.tb_phoneNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb_username = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_age = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_status = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
+            this.panel1.Controls.Add(this.cbx_certificate);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.tb_fullname);
             this.panel1.Controls.Add(this.btn_save);
             this.panel1.Controls.Add(this.btn_cancel);
-            this.panel1.Controls.Add(this.btn_status);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tb_phoneNumber);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.tb_age);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.tb_username);
+            this.panel1.Controls.Add(this.id);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 49);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 362);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 4;
+            // 
+            // cbx_certificate
+            // 
+            this.cbx_certificate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
+            this.cbx_certificate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_certificate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbx_certificate.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.cbx_certificate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
+            this.cbx_certificate.FormattingEnabled = true;
+            this.cbx_certificate.Location = new System.Drawing.Point(51, 165);
+            this.cbx_certificate.Name = "cbx_certificate";
+            this.cbx_certificate.Size = new System.Drawing.Size(242, 27);
+            this.cbx_certificate.TabIndex = 17;
             // 
             // label5
             // 
@@ -71,9 +78,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
             this.label5.Location = new System.Drawing.Point(47, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 19);
+            this.label5.Size = new System.Drawing.Size(125, 19);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Full Name";
+            this.label5.Text = "Name Student";
             // 
             // tb_fullname
             // 
@@ -123,20 +130,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
             this.label4.Location = new System.Drawing.Point(47, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 19);
+            this.label4.Size = new System.Drawing.Size(146, 19);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Phone number";
-            // 
-            // tb_phoneNumber
-            // 
-            this.tb_phoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
-            this.tb_phoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_phoneNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_phoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
-            this.tb_phoneNumber.Location = new System.Drawing.Point(51, 166);
-            this.tb_phoneNumber.Name = "tb_phoneNumber";
-            this.tb_phoneNumber.Size = new System.Drawing.Size(296, 27);
-            this.tb_phoneNumber.TabIndex = 3;
+            this.label4.Text = "Sertificate Name";
             // 
             // label2
             // 
@@ -145,88 +141,42 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
             this.label2.Location = new System.Drawing.Point(47, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 19);
+            this.label2.Size = new System.Drawing.Size(28, 19);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Username";
+            this.label2.Text = "ID";
             // 
-            // tb_username
+            // id
             // 
-            this.tb_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
-            this.tb_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_username.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
-            this.tb_username.Location = new System.Drawing.Point(51, 47);
-            this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(435, 27);
-            this.tb_username.TabIndex = 1;
+            this.id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
+            this.id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.id.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
+            this.id.Location = new System.Drawing.Point(51, 47);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(435, 27);
+            this.id.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
-            this.label1.Location = new System.Drawing.Point(6, 9);
+            this.label1.Location = new System.Drawing.Point(6, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 33);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "USER INFO";
+            this.label1.Size = new System.Drawing.Size(278, 33);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "CERTIFICATE INFO";
             // 
-            // tb_age
-            // 
-            this.tb_age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
-            this.tb_age.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_age.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_age.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
-            this.tb_age.Location = new System.Drawing.Point(387, 166);
-            this.tb_age.Name = "tb_age";
-            this.tb_age.Size = new System.Drawing.Size(99, 27);
-            this.tb_age.TabIndex = 4;
-            this.tb_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypressed);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(62)))), ((int)(((byte)(56)))));
-            this.label3.Location = new System.Drawing.Point(383, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 19);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Age";
-            // 
-            // btn_status
-            // 
-            this.btn_status.BackColor = System.Drawing.Color.Brown;
-            this.btn_status.FlatAppearance.BorderSize = 0;
-            this.btn_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_status.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_status.Location = new System.Drawing.Point(387, 212);
-            this.btn_status.Name = "btn_status";
-            this.btn_status.Size = new System.Drawing.Size(99, 44);
-            this.btn_status.TabIndex = 5;
-            this.btn_status.Text = "Lock user";
-            this.btn_status.UseVisualStyleBackColor = false;
-            this.btn_status.Click += new System.EventHandler(this.btn_status_Click);
-            // 
-            // frmAdjustUser
+            // AdjustCerrtificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(184)))), ((int)(((byte)(151)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(221)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(550, 411);
-            this.ControlBox = false;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmAdjustUser";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUserCRUDs";
+            this.Controls.Add(this.label1);
+            this.Name = "AdjustCerrtificate";
+            this.Load += new System.EventHandler(this.AdjustCerrtificate_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -237,17 +187,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tb_fullname;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tb_phoneNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_username;
+        private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tb_fullname;
-        private System.Windows.Forms.Button btn_status;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb_age;
+        private System.Windows.Forms.ComboBox cbx_certificate;
     }
 }
