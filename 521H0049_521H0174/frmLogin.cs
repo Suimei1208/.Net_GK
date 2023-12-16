@@ -191,5 +191,10 @@ namespace _521H0049_521H0174
         {
             MU(sender, e);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace _521H0049_521H0174.Models
         public int StudentID { get; set; }
 
         public virtual Student Student { get; set; }
+
+        public DateTime IssuanceDate { get; set; }
     }
 }

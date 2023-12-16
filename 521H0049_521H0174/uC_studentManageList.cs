@@ -137,7 +137,7 @@ namespace _521H0049_521H0174
                 int age, _id;
                 double gpa;
 
-                _id = int.Parse(DGV_studentData.SelectedRows[0].Cells["StudentID"].Value.ToString());
+                _id = (int)DGV_studentData.SelectedRows[0].Cells["StudentID"].Value;
                 fname = DGV_studentData.SelectedRows[0].Cells["FirstName"].Value.ToString();
                 lname = DGV_studentData.SelectedRows[0].Cells["LastName"].Value.ToString();
                 phone = DGV_studentData.SelectedRows[0].Cells["PhoneNumber"].Value.ToString();
@@ -250,6 +250,11 @@ namespace _521H0049_521H0174
             {
                 firstSetup += 1;
             }
+        }
+
+        private void uC_studentManageList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

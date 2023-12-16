@@ -9,6 +9,8 @@ namespace _521H0049_521H0174.Models
     [Table("LoginHistory")]
     public partial class LoginHistory
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int LoginHistoryID { get; set; }
 
         public int? UserID { get; set; }

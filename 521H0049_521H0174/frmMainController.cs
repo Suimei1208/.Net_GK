@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _521H0049_521H0174.Models;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 //using System.Windows.Input;
@@ -15,6 +16,7 @@ namespace _521H0049_521H0174
         private bool isStudentContainerExpand = false;      // -
         private bool isDataContainerExpand = false;         // -
         private readonly myDAL myDal = new myDAL();
+        private readonly ImportAndExport File = new ImportAndExport();
 
 
         //main
@@ -322,12 +324,19 @@ namespace _521H0049_521H0174
         //Buttons of Data Container
         private void btnImport_Click(object sender, EventArgs e)
         {
+            File.ImportFile();
             clearUserControls();
         }
         // -
         private void btnExport_Click(object sender, EventArgs e)
         {
+            File.ExportFile();
             clearUserControls();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

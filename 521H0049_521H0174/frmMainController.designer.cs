@@ -95,6 +95,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 50);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topPanel_MD);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanel_MM);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.topPanel_MU);
@@ -433,6 +434,7 @@
             this.btnDataControl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDataControl.Location = new System.Drawing.Point(0, 0);
             this.btnDataControl.Name = "btnDataControl";
+            this.btnDataControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDataControl.Size = new System.Drawing.Size(195, 80);
             this.btnDataControl.TabIndex = 1;
             this.btnDataControl.Text = "             Data Control";
@@ -605,7 +607,6 @@
         private System.Windows.Forms.Button btnUserMenuMain;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnDataControl;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnStudentManageMain;
         private System.Windows.Forms.Timer Slider;
@@ -631,5 +632,6 @@
         private System.Windows.Forms.Timer userSlider;
         private System.Windows.Forms.Timer studentSlider;
         private System.Windows.Forms.Timer dataSlider;
+        private System.Windows.Forms.Button btnDataControl;
     }
 }
