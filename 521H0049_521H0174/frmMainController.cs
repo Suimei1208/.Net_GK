@@ -268,13 +268,10 @@ namespace _521H0049_521H0174
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             SharedData.Instance.ClearUser();
-            this.Hide();
-            Form f = Application.OpenForms[0];
-            f.ShowDialog();
-            this.Close();
+            
 
-            //Application.Restart();
-            //this.Close();
+            Application.Restart();
+            this.Close();
         }
 
 

@@ -38,6 +38,16 @@ namespace _521H0049_521H0174
             SetupStatusComboBox();
             LoadStudentData();
             tbGPA.Text= string.Empty;
+            btn_add.Visible = false;
+            btn_delete.Visible = false;
+            btn_adjust.Visible = false;
+
+            if (SharedData.Instance.Role.Equals("Admin"))
+            {
+                btn_add.Visible = true;
+                btn_delete.Visible = true;
+                btn_adjust.Visible = true;
+            }
         }
 
         private void SetupStatusComboBox()

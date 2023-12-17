@@ -76,30 +76,24 @@ namespace _521H0049_521H0174
             
             else if(await myDal.UserExists(tbUsername.Text, tbPassword.Text))
             {
-                if (myDal.GetUserStatusByUsername(tbUsername.Text).Equals("Normal"))
-                {
-                    //MessageBox.Show("Load icon run");
+                
+                    
                     loadingIcon.Hide();
                     myDal.LogUserLogin(tbUsername.Text);
                     this.Hide();
                     Form f;
-                    if (Application.OpenForms.Count < 2)
+                    if (myDal.GetUserStatusByUsername(tbUsername.Text).Equals("Normal"))
                     {
-                        f = new frmMainController();
+                        myDal.LogUserLogin(tbUsername.Text);
+                        NavigateToMainForm();
                     }
                     else
                     {
-                        f = Application.OpenForms[0];
+                        loadingIcon.Hide();
+                        errlabel.Text = "This user has been blocked";
+                        errlabel.Show();
                     }
-                    f.ShowDialog();
-                    Close();
-                }
-                else
-                {
-                    loadingIcon.Hide();
-                    errlabel.Text = "This user has been blocked";
-                    errlabel.Show();
-                }
+                
             }
             else
             {
@@ -109,6 +103,19 @@ namespace _521H0049_521H0174
                 errlabel.Show();
             }
             
+        }
+
+        private void NavigateToMainForm()
+        {
+            loadingIcon.Hide();
+            this.Hide();
+
+            using (Form mainForm = new frmMainController())
+            {
+                mainForm.ShowDialog();
+            }
+
+            this.Close();
         }
 
         //When click on login button

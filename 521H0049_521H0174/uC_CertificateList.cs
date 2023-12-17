@@ -21,7 +21,16 @@ namespace _521H0049_521H0174
             InitializeComponent();
             dbContext = new Model1();
             DGV_studentData.DataSource = dbContext.Students.ToList();
-           // DGV_CM.DataSource = dbContext.CertificateStudentList.
+            // DGV_CM.DataSource = dbContext.CertificateStudentList.
+            btn_add.Visible = false;
+            btn_delete.Visible = false;
+            btn_adjust.Visible = false;
+            if (SharedData.Instance.Role.Equals("Admin"))
+            {
+                btn_add.Visible = true;
+                btn_delete.Visible = true;
+                btn_adjust.Visible = true;
+            }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
